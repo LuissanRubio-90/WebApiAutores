@@ -1,0 +1,18 @@
+﻿namespace WebApiAutores.DTOs
+{
+    public class PaginacionDTO
+    {
+        public int pagina { get; set; } = 1;
+        public int recordsPorPagina { get; set; } = 10;
+
+        private readonly int cantidadMaximaPorPagina = 50;
+
+        public int RecordsPorPagina
+        {
+            get { return recordsPorPagina; }
+            set { recordsPorPagina = (value > cantidadMaximaPorPagina) ? cantidadMaximaPorPagina : value; }
+        }
+
+
+    }
+}
